@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #000000;
+  --bg-elev: #060606;
+  --lime: #99cf1b;
+  --lime-dim: #84b815;
+  --lime-soft: rgba(153, 207, 27, 0.045);
+  --lime-glow: rgba(153, 207, 27, 0.22);
+  --line: rgba(153, 207, 27, 0.82);
+  --line-soft: rgba(255, 255, 255, 0.06);
+  --text: #ffffff;
+  --text-mute: rgba(255, 255, 255, 0.62);
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root {
+  background: var(--bg);
+  color: var(--text);
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--bg);
+}
+
+.font-display {
+  font-family: 'Big Shoulders Display', 'Oswald', sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 0.95;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.04em;
+}
+
+.columns-bg {
+  background-image: url('https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=1800&q=85');
+  background-size: cover;
+  background-position: left center;
+  background-repeat: no-repeat;
+  filter: brightness(0.5) contrast(1.15) saturate(0.5);
+}
+
+.hero-vignette {
+  background:
+    linear-gradient(90deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.45) 35%, rgba(0,0,0,0.78) 60%, rgba(0,0,0,0.96) 82%, #000 100%),
+    linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.05) 35%, rgba(0,0,0,0.6) 100%);
+}
+
+.lime-panel {
+  border: 1.5px solid var(--line);
+  background: linear-gradient(180deg, rgba(10,10,8,0.85) 0%, rgba(0,0,0,0.85) 100%);
+  backdrop-filter: blur(6px);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.lime-panel:hover,
+.lime-panel:focus-within {
+  box-shadow:
+    0 0 0 1px rgba(153, 207, 27, 0.08),
+    0 0 40px -8px var(--lime-glow),
+    inset 0 0 30px -10px rgba(153, 207, 27, 0.04);
+  border-color: var(--lime);
+}
+
+.tool-icon-box {
+  border: 1px solid rgba(153, 207, 27, 0.35);
+  background: var(--lime-soft);
+  transition: all 0.25s ease;
+}
+
+.lime-row { transition: background 0.2s ease, padding 0.2s ease; }
+.lime-row:hover { background: rgba(153, 207, 27, 0.04); }
+
+.lime-row:hover .tool-icon-box {
+  background: rgba(153, 207, 27, 0.18);
+  border-color: var(--lime);
+}
+
+.lime-row:hover .row-arrow { transform: translateX(4px); }
+
+.row-arrow { transition: transform 0.25s ease; }
+
+.btn-lime {
+  border: 1.5px solid var(--lime);
+  color: var(--lime);
+  background: transparent;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.16em;
+  transition: background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn-lime:hover {
+  background-color: rgba(153, 207, 27, 0.08);
+  box-shadow: 0 0 24px -8px var(--lime-glow);
+}
+
+.btn-lime:hover .btn-arrow { transform: translateX(4px); }
+.btn-arrow { transition: transform 0.25s ease; }
+
+.tool-card {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(180deg, #050505 0%, #020202 100%);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.tool-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid transparent;
+  background: linear-gradient(135deg, transparent 30%, rgba(153, 207, 27, 0.0) 100%);
+  transition: background 0.3s ease;
+  pointer-events: none;
+}
+
+.tool-card:hover {
+  border-color: var(--line);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px -16px var(--lime-glow);
+}
+
+.tool-card:hover .card-arrow { transform: translateX(6px); }
+.tool-card:hover .card-icon { color: var(--lime); transform: scale(1.04); }
+.tool-card:hover .card-open-label { opacity: 1; }
+
+.card-open-label { opacity: 0; transition: opacity 0.25s ease; }
+.card-arrow, .card-icon { transition: all 0.3s ease; }
+
+.divider-soft {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.08) 8%, rgba(255,255,255,0.08) 92%, transparent 100%);
+}
+
+.top-divider {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+::selection {
+  background: var(--lime);
+  color: #000;
+}
+
+@keyframes riseIn {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.rise { animation: riseIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.rise-1 { animation-delay: 0.05s; }
+.rise-2 { animation-delay: 0.15s; }
+.rise-3 { animation-delay: 0.25s; }
+.rise-4 { animation-delay: 0.35s; }
+.rise-5 { animation-delay: 0.45s; }
+.rise-6 { animation-delay: 0.55s; }
