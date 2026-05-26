@@ -20,7 +20,7 @@ const panelItems = [
 
 const toolBay = [
   { icon: CalendarDays, title: "Event Block Calculator", desc: "Calculate block and taper dates.", href: "#" },
-  { icon: Timer, title: "IronClock", desc: "Prepare loading and timed work.", href: "#" },
+  { icon: Timer, title: "IronClock", desc: "Prepare loading and timed work.", href: "/tools/ironclock" },
   { icon: QrCode, title: "Gym Share", desc: "Create gym text and QR output.", href: "#" },
   { icon: ClipboardList, title: "Session Log", desc: "Record simple session notes.", href: "#" },
   { icon: Trophy, title: "Meet Planner", desc: "Map meet-day preparation dates.", href: "#" },
