@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#050607" />
+    <title>Kolosseum Tools Offline</title>
+    <style>
+      :root {
+        --lime: #99cf1b;
+        --bg: #050607;
+        --text: #ffffff;
+        --muted: rgba(255,255,255,0.64);
+        --line: rgba(153,207,27,0.62);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        min-height: 100%;
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      body {
+        display: grid;
+        place-items: center;
+        padding: 24px;
+      }
+
+      .card {
+        width: min(100%, 520px);
+        border: 1px solid var(--line);
+        background: linear-gradient(180deg, #060606 0%, #020202 100%);
+        padding: 28px;
+      }
+
+      .kicker {
+        color: var(--lime);
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        font-size: 12px;
+        margin: 0 0 16px;
+      }
+
+      h1 {
+        margin: 0 0 12px;
+        font-size: 36px;
+        line-height: 1;
+      }
+
+      p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.55;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="card">
+      <p class="kicker">Kolosseum Tools</p>
+      <h1>Offline</h1>
+      <p>This device is offline. Reopen IronClock after the first successful load to use cached app files.</p>
+    </main>
+  </body>
+</html>

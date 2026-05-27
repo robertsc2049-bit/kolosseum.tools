@@ -1,0 +1,49 @@
+{
+  "name": "Kolosseum Tools",
+  "short_name": "K Tools",
+  "description": "Kolosseum.tools public strength utility surface.",
+  "id": "/",
+  "start_url": "/tools/ironclock",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui", "browser"],
+  "orientation": "any",
+  "background_color": "#050607",
+  "theme_color": "#050607",
+  "categories": ["sports", "productivity", "utilities"],
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Open IronClock",
+      "short_name": "IronClock",
+      "description": "Open the IronClock barbell loading and rest timer.",
+      "url": "/tools/ironclock",
+      "icons": [
+        {
+          "src": "/icons/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
+  ]
+}
